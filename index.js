@@ -6,14 +6,19 @@ const server = express()
 server.use(express.json())
 //server.use(express.static(path.join(__dirname, 'client/build')))
 
+const users = [
+    { 
+        username: "desiree",
+        password: "garcia"
+    },
+    {
+        username: "joseph",
+        password: "garcia"
+    }
+]
+
 server.get('/api/users', (req, res) => {
-    res.json([
-        { id:1, username: "Desiree"},
-        { id:2, username: "Adrian"},
-        { id:3, username: "Matthew"},
-        { id:4, username: "Joseph"},
-        { id:5, username: "Gunner"}
-    ])
+    res.json(users)
 })
 const PORT = process.env.PORT || 8080
 
